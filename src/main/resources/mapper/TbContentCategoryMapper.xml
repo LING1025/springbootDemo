@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funtl.hello.spring.boot.mapper.TbContentCategoryMapper">
+    <resultMap id="BaseResultMap" type="com.funtl.hello.spring.boot.domain.TbContentCategory">
+        <!--@mbg.generated generated on Sat Sep 14 11:02:17 CST 2019.-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="parentId" jdbcType="BIGINT" property="parentId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="sortOrder" jdbcType="INTEGER" property="sortOrder"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated generated on Sat Sep 14 11:02:17 CST 2019.-->
+        id, parentId, name, status, sortOrder
+    </sql>
+
+
+    <insert id="addTb" useGeneratedKeys="true" keyProperty="id">
+        insert into TbContentCategory(parentId, name, status, sortOrder) values(#{parentId},#{name},#{status},#{sortOrder});
+    </insert> 
+
+</mapper>
